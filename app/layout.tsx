@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "ClipTools — Video & Audio Converter",
   description:
     "Upload a video you own and export it in multiple qualities, convert its audio to MP3, M4A, Opus, WAV or FLAC, and enhance picture and sound.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0b0d12",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({

@@ -24,7 +24,7 @@ export const PLATFORMS: Platform[] = [
     id: "youtube",
     name: "YouTube",
     badge: "YT",
-    badgeClass: "bg-red-500/10 text-red-600",
+    badgeClass: "bg-red-500/15 text-red-300",
     description: "Videos, Shorts and live replays.",
     linkTypes: ["youtube.com/watch", "youtu.be", "Shorts"],
     download: {
@@ -40,7 +40,7 @@ export const PLATFORMS: Platform[] = [
     id: "instagram",
     name: "Instagram",
     badge: "IG",
-    badgeClass: "bg-pink-500/10 text-pink-600",
+    badgeClass: "bg-pink-500/15 text-pink-300",
     description: "Reels, posts and IGTV videos.",
     linkTypes: ["Reels", "Posts", "IGTV"],
     download: {
@@ -55,7 +55,7 @@ export const PLATFORMS: Platform[] = [
     id: "x",
     name: "X",
     badge: "X",
-    badgeClass: "bg-slate-900/10 text-slate-900",
+    badgeClass: "bg-white/10 text-fg",
     description: "Videos and GIFs from posts.",
     linkTypes: ["x.com", "twitter.com"],
     download: {
@@ -70,7 +70,7 @@ export const PLATFORMS: Platform[] = [
     id: "pinterest",
     name: "Pinterest",
     badge: "P",
-    badgeClass: "bg-rose-500/10 text-rose-600",
+    badgeClass: "bg-rose-500/15 text-rose-300",
     description: "Image and video pins.",
     linkTypes: ["Pins", "pin.it short links"],
     download: {

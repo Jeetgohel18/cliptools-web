@@ -42,18 +42,22 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <section id="faq" className="scroll-mt-20 border-t border-slate-200 bg-white py-20">
+    <section id="faq" className="scroll-mt-20 border-t border-line bg-surface/50 py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeading eyebrow="FAQ" title="Questions & answers" text="Everything you need to know." />
 
-        <div className="mt-12 divide-y divide-slate-200 rounded-2xl border border-slate-200">
+        <div className="mt-12 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-surface">
           {faqs.map((f) => (
-            <details key={f.q} className="group px-6 py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-slate-900">
+            <details key={f.q} className="group px-6 py-5 open:bg-raised/40">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded font-medium text-fg focus-visible:ring-2 focus-visible:ring-accent-soft focus-visible:outline-none [&::-webkit-details-marker]:hidden">
                 {f.q}
-                <span className="text-xl text-indigo-600 transition group-open:rotate-45">+</span>
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-muted transition group-open:rotate-45 group-open:border-accent/40 group-open:text-accent-soft">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                    <path d="M12 6v12M6 12h12" />
+                  </svg>
+                </span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">{f.a}</p>
+              <p className="mt-3 pr-10 text-sm leading-relaxed text-muted">{f.a}</p>
             </details>
           ))}
         </div>

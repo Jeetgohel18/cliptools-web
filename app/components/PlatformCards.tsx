@@ -14,30 +14,30 @@ export default function PlatformCards() {
           <a
             key={p.id}
             href="#top"
-            className="group rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/10"
+            className="group rounded-2xl border border-line bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-line-strong hover:bg-raised"
           >
             <span className={`grid h-11 w-11 place-items-center rounded-xl text-sm font-bold ${p.badgeClass}`}>
               {p.badge}
             </span>
-            <h3 className="mt-5 font-semibold text-slate-900">{p.name}</h3>
-            <p className="mt-1.5 text-sm text-slate-600">{p.description}</p>
+            <h3 className="mt-5 font-semibold text-fg">{p.name}</h3>
+            <p className="mt-1.5 text-sm text-muted">{p.description}</p>
 
-            <ul className="mt-4 space-y-1 text-xs text-slate-500">
+            <ul className="mt-4 space-y-1 text-xs text-muted">
               {p.linkTypes.map((t) => (
                 <li key={t}>• {t}</li>
               ))}
             </ul>
 
             <div className="mt-5 flex flex-wrap gap-1.5">
-              <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700">
+              <span className="rounded-md bg-emerald-400/10 px-2 py-0.5 text-xs font-medium text-emerald-300">
                 Link detection
               </span>
-              <span className="rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
+              <span className="rounded-md bg-raised px-2 py-0.5 text-xs font-medium text-muted">
                 Downloads: {p.download.label.toLowerCase()}
               </span>
             </div>
 
-            <p className="mt-5 text-sm font-medium text-indigo-600 transition group-hover:translate-x-1">
+            <p className="mt-5 text-sm font-medium text-accent-soft transition group-hover:translate-x-1">
               Paste a {p.name} link →
             </p>
           </a>
@@ -50,9 +50,9 @@ export default function PlatformCards() {
 export function SectionHeading({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <p className="text-sm font-semibold tracking-wide text-indigo-600 uppercase">{eyebrow}</p>
-      <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">{title}</h2>
-      <p className="mt-3 text-slate-600">{text}</p>
+      <p className="text-xs font-semibold tracking-[0.14em] text-accent-soft uppercase">{eyebrow}</p>
+      <h2 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-fg sm:text-4xl">{title}</h2>
+      <p className="mt-3 text-muted">{text}</p>
     </div>
   );
 }

@@ -15,16 +15,22 @@ const brandKits = [
   { name: "Pinterest brand guidelines", href: "https://business.pinterest.com/brand-guidelines/" },
 ];
 
+const Arrow = () => (
+  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" aria-hidden="true">
+    <path d="M8 16 16 8M9 8h7v7" />
+  </svg>
+);
+
 export default function CreativeAssets() {
   return (
-    <section id="assets" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6">
+    <section id="assets" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-24 sm:px-6">
       <SectionHeading
         eyebrow="Creative assets"
         title="Free, licensed resources"
-        text="Official sources for stock media and platform logos — downloaded directly from the people who own them."
+        text="Official sources for stock media and platform logos, straight from the people who own them."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-14 grid gap-4 lg:grid-cols-3">
         <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2">
           {libraries.map((l) => (
             <a
@@ -32,31 +38,33 @@ export default function CreativeAssets() {
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/10"
+              className="group rounded-2xl border border-line bg-surface p-5 transition hover:border-line-strong hover:bg-raised"
             >
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-slate-900">{l.name}</h3>
-                <span className="text-slate-400 transition group-hover:text-indigo-600">↗</span>
+                <h3 className="font-semibold text-fg">{l.name}</h3>
+                <span className="text-muted transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent-soft">
+                  <Arrow />
+                </span>
               </div>
-              <p className="mt-1.5 text-sm text-slate-600">{l.text}</p>
+              <p className="mt-1.5 text-sm text-muted">{l.text}</p>
             </a>
           ))}
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h3 className="font-semibold text-slate-900">Official brand kits</h3>
-          <p className="mt-1.5 text-sm text-slate-600">Logos and usage rules, straight from each platform.</p>
-          <ul className="mt-4 divide-y divide-slate-100">
+        <div className="rounded-2xl border border-line bg-surface p-6">
+          <h3 className="font-semibold text-fg">Official brand kits</h3>
+          <p className="mt-1.5 text-sm text-muted">Logos and usage rules, straight from each platform.</p>
+          <ul className="mt-4 divide-y divide-line">
             {brandKits.map((b) => (
               <li key={b.name}>
                 <a
                   href={b.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between py-3 text-sm text-slate-700 hover:text-indigo-600"
+                  className="flex items-center justify-between py-3 text-sm text-muted transition hover:text-fg"
                 >
                   {b.name}
-                  <span aria-hidden>↗</span>
+                  <Arrow />
                 </a>
               </li>
             ))}
@@ -64,9 +72,7 @@ export default function CreativeAssets() {
         </div>
       </div>
 
-      <p className="mt-6 text-center text-xs text-slate-500">
-        External sites open in a new tab. Always check the licence before using any asset.
-      </p>
+      <p className="mt-6 text-center text-xs text-muted">External sites open in a new tab. Always check the licence before using any asset.</p>
     </section>
   );
 }
